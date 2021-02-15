@@ -16,7 +16,7 @@ Result JSON document returned from Jelastic.
 ### Example usage
 ```yaml
   - name: Run GetEnv command
-    uses: DovnarAlexander/github-action-jelastic@master
+    uses: foodstarter/github-action-jelastic@main
     with:
       jelastic_url: app.mycloud.by
       jelastic_username: ${{ secrets.JELASTIC_USERNAME }}
