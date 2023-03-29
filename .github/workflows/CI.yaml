@@ -45,7 +45,7 @@ jobs:
           echo "::set-output name=repo::$repo"
           echo "::set-output name=tag::$tag"
       - name: Build and Push to GitHub registry Commit tag
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: docker.pkg.github.com/${{ github.repository }}/jelastic-cli
           username: ${{ github.repository_owner }}
@@ -85,7 +85,7 @@ jobs:
           WITH_V: true
           DRY_RUN: true
       - name: Build and Push to GitHub registry
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: docker.pkg.github.com/${{ github.repository }}/jelastic-cli
           username: ${{ github.repository_owner }}
@@ -93,7 +93,7 @@ jobs:
           registry: docker.pkg.github.com
           tags: "${{ needs.test.outputs.tag }},${{ steps.create_tag_test.outputs.new_tag }},latest"
       - name: Build and Push to DockerHub
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: aliaksandrdounar/jelastic-cli
           username: ${{ secrets.DOCKER_USERNAME }}
